@@ -1,0 +1,5 @@
+chances:
+  walk: 0.002
+  eat: 0.6
+  mine-stone: 0.012
+  attack: 0.1

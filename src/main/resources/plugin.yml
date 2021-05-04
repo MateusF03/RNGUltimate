@@ -1,0 +1,13 @@
+name: RNGUltimate
+version: @version@
+main: me.mateus.rngultimate.RNGUltimate
+api-version: 1.16
+prefix: RNGU
+authors: [ Mateusaum ]
+description: A RNG Minecraft plugin
+depend: [BlockStore]
+commands:
+  sendFakeDemo:
+    description: Sends a fake demo
+    permission: rngultimate.sendfakedemo
+    usage: /<command> [target]
