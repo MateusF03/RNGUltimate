@@ -2,16 +2,11 @@ package me.mateus.rngultimate.listener;
 
 import me.mateus.rngultimate.RNGUltimate;
 import me.mateus.rngultimate.utils.ArmorUtil;
-import net.minecraft.server.v1_16_R3.PacketPlayOutGameStateChange;
 import net.sothatsit.blockstore.BlockStoreApi;
 import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.BlockData;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -37,7 +32,7 @@ import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.stream.Stream;
 
-public class RNGListener implements Listener, CommandExecutor {
+public class RNGListener implements Listener{
 
     private final Plugin plugin;
     private final Set<Player> players = new HashSet<>();
@@ -434,22 +429,5 @@ public class RNGListener implements Listener, CommandExecutor {
             }
         }
         return blocks;
-    }
-
-    @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (args.length == 0) {
-            return false;
-        }
-        String targetName = args[0];
-        Player target = Bukkit.getPlayerExact(targetName);
-        if (target == null) {
-            sender.sendMessage(ChatColor.RED + "Este jogador não existe");
-            return true;
-        }
-        PacketPlayOutGameStateChange packet = new PacketPlayOutGameStateChange(PacketPlayOutGameStateChange.f, 0.0f);
-        ((CraftPlayer) target).getHandle().playerConnection.sendPacket(packet);
-
-        return true;
     }
 }

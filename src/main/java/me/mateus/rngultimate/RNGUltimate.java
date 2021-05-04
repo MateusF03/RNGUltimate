@@ -33,7 +33,6 @@ public final class RNGUltimate extends JavaPlugin {
         attackChance = config.getDouble("chances.attack");
         RNGListener rngListener = new RNGListener(this);
         pluginManager.registerEvents(rngListener, this);
-        Objects.requireNonNull(getCommand("sendFakeDemo")).setExecutor(rngListener);
     }
 
     @Override

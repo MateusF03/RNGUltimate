@@ -6,8 +6,3 @@ prefix: RNGU
 authors: [ Mateusaum ]
 description: A RNG Minecraft plugin
 depend: [BlockStore]
-commands:
-  sendFakeDemo:
-    description: Sends a fake demo
-    permission: rngultimate.sendfakedemo
-    usage: /<command> [target]
