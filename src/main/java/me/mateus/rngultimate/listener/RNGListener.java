@@ -402,7 +402,6 @@ public class RNGListener implements Listener{
             Block block = e.getBlock();
 
             List<Block> blocks = getSurroundingBlocks(block.getLocation(), block.getWorld());
-            e.getPlayer().sendMessage(String.valueOf(blocks.size()));
 
             for (Block b: blocks) {
                 if (b.getBlockData().getMaterial() != Material.STONE)
